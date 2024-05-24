@@ -20,6 +20,8 @@ gem 'mutex_m'
 gem 'base64'
 gem 'bigdecimal'
 
+# Dotenv
+gem 'dotenv-rails', groups: [:development, :test]
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 

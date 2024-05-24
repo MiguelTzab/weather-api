@@ -2,7 +2,7 @@ require 'net/http'
 require 'json'
 
 class ReservamosApiClient
-  API_BASE_URL = 'https://search.reservamos.mx/api/v2'.freeze
+  API_BASE_URL = ENV['RESERVAMOS_API_BASE_URL']
 
   def self.search_cities_by_name(name)
     uri = URI("#{API_BASE_URL}/places?q=#{URI.encode_www_form_component(name)}")
