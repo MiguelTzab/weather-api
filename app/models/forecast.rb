@@ -7,11 +7,19 @@ class Forecast
     @temp_min = temp_min
   end
 
+  def to_h
+    {
+      dt: dt,
+      temp_max: temp_max,
+      temp_min: temp_min
+    }
+  end
+
   def as_json(options = {})
     {
-      dt: @dt,
-      temp_max: @temp_max,
-      temp_min: @temp_min,
+      dt: dt,
+      temp_max: temp_max,
+      temp_min: temp_min,
     }
   end
 

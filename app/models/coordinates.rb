@@ -6,10 +6,17 @@ class Coordinates
     @long = long
   end
 
+  def to_h
+    {
+      lat: lat,
+      long: long
+    }
+  end
+
   def as_json(options = {})
     {
-      lat: @lat,
-      long: @long
+      lat: lat,
+      long: long
     }
   end
 end

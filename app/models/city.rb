@@ -10,14 +10,25 @@ class City
     @forecasts = forecasts
   end
 
+  def to_h
+    {
+      id: id,
+      name: name,
+      state: state,
+      country: country,
+      coordinates: coordinates.to_h,
+      forecasts: forecasts.map(&:to_h)
+    }
+  end
+
   def as_json(options = {})
     {
-      id: @id,
-      name: @name,
-      state: @state,
-      country: @country,
-      coordinates: @coordinates.as_json,
-      forecasts: @forecasts.map(&:as_json)
+      id: id,
+      name: name,
+      state: state,
+      country: country,
+      coordinates: coordinates.as_json,
+      forecasts: forecasts.map(&:as_json)
     }
   end
 
