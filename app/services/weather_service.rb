@@ -1,6 +1,6 @@
 class WeatherService
   def self.get_forecast(cities)
-    forecasts = []
+    forecasts = {}
 
     threads = cities.map do |city|
       Thread.new do
