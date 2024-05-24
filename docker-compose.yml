@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  ruby:
+    build:
+      context: .
+      dockerfile: docker/ruby/Dockerfile
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8004:81"
+    depends_on:
+      - ruby
