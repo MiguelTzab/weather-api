@@ -18,8 +18,8 @@ class Forecast
   def self.map_to_forecast(data)
     Forecast.new(
       dt: data['dt'],
-      temp_max: data['temp_max'],
-      temp_min: data['temp_min']
+      temp_max: data['temp']['max'],
+      temp_min: data['temp']['min']
     )
   end
 

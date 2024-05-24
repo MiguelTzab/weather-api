@@ -7,7 +7,7 @@ class City
     @state = state
     @country = country
     @coordinates = coordinates
-    @forecast = forecasts
+    @forecasts = forecasts
   end
 
   def as_json(options = {})

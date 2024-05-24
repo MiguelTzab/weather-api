@@ -8,7 +8,6 @@ class OpenWeatherMapApiClient
 
   def self.search_forecast_by_coordinates(lat, long)
     uri = URI("#{API_BASE_URL}/onecall?lat=#{lat}&lon=#{long}&exclude=current,hourly,minutely,alerts&appid=#{API_KEY}&units=#{METRIC}")
-    puts uri
     response = Net::HTTP.get_response(uri)
 
     if response.is_a?(Net::HTTPSuccess)
