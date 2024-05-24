@@ -11,7 +11,6 @@ class City
   end
 
   def as_json(options = {})
-    coordinates = { lat: @lat, long: @long}
     {
       id: @id,
       name: @name,

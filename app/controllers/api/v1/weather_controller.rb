@@ -3,9 +3,12 @@ module Api
     class WeatherController < ApplicationController
       def search_cities_weather
         cities = CityService.search_cities_by_name(params[:name])
-        render json: cities, status: :created
+        cities.each do |city|
+          city.forecasts = WeatherService.get_forecast_by_coordinates(city.coordinates)
+        end
+        render json: cities.as_json, status: :created
       rescue StandardError => e
-        render json: { error: e.message, trace: e.backtrace.join("\n\t") }, status: :unprocessable_entity
+        render json: { error: e.message }, status: :unprocessable_entity
       end
     end
   end
